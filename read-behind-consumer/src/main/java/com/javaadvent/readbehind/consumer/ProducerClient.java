@@ -7,6 +7,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Component
 public class ProducerClient {
+    @ReadBehind
     @Cacheable("read-behind-cache")
     public String performRequest(String name) {
         return new RestTemplate().getForEntity(

@@ -11,9 +11,11 @@ import java.util.Date;
 @RestController
 @RequestMapping("producer")
 public class ProducerController {
+    public static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("HH:mm:ss.SSS");
+
     @GetMapping
     String produce(@RequestParam String name) throws InterruptedException {
         Thread.sleep(5000);
-        return name + " : " + new SimpleDateFormat("HH:mm:ss.SSS").format(new Date());
+        return name + " : " + SIMPLE_DATE_FORMAT.format(new Date());
     }
 }

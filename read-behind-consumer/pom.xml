@@ -15,7 +15,7 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <java.version>13</java.version>
+        <java.version>11</java.version>
     </properties>
 
     <dependencies>
@@ -51,6 +51,7 @@
     </dependencies>
 
     <build>
+        <finalName>consumer</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

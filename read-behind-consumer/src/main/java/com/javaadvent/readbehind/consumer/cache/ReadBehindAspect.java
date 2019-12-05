@@ -1,4 +1,4 @@
-package com.javaadvent.readbehind.consumer;
+package com.javaadvent.readbehind.consumer.cache;
 
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.JoinPoint;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class ReadBehindAspect implements Ordered {
     private final CachedInvocations invocations;
 
-    @Before("@annotation(ReadBehind)")
+    @Before("@annotation(com.javaadvent.readbehind.consumer.cache.ReadBehind)")
     public Object cacheInvocation(JoinPoint joinPoint) {
         invocations.addInvocation(new CachedInvocation(joinPoint));
         return null;

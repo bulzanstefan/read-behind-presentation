@@ -1,4 +1,4 @@
-package com.javaadvent.readbehind.consumer;
+package com.javaadvent.readbehind.consumer.cache;
 
 import org.springframework.stereotype.Component;
 

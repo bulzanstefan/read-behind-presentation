@@ -1,7 +1,10 @@
-package com.javaadvent.readbehind.consumer;
+package com.javaadvent.readbehind.consumer.cache;
 
 import lombok.*;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.reflect.MethodSignature;
+
+import java.lang.reflect.Method;
 
 @Value
 @Builder
@@ -11,11 +14,11 @@ import org.aspectj.lang.JoinPoint;
 public class CachedInvocation {
     private Object targetBean;
     private Object[] arguments;
-    private String targetMethodName;
+    private Method targetMethod;
 
     public CachedInvocation(JoinPoint joinPoint) {
         targetBean = joinPoint.getTarget();
         arguments = joinPoint.getArgs();
-        targetMethodName = joinPoint.getSignature().getName();
+        targetMethod = ((MethodSignature) joinPoint.getSignature()).getMethod();
     }
 }

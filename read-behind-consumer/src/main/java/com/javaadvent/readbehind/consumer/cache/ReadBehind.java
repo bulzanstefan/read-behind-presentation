@@ -1,4 +1,4 @@
-package com.javaadvent.readbehind.consumer;
+package com.javaadvent.readbehind.consumer.cache;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
